@@ -26,20 +26,26 @@ module.exports = function(app) {
         // Calculates the difference between user's score and each friend's score in the data set
         let totalDifference;
 
-        // For loop to run through each friend's data to.
-        for (let i = 0; i < friends.length; i++) {
-            
+        // For loop to run through each friend's data for possbile matches
+        for (let f = 0; f < friends.length; f++) {
+            totalDifference = 0;
+              
+            // For loop to run through all the scores for each possible friend
+            for (let s = 0; s < friends[f].scores.length; s++) {
+                    totalDifference += Math.abs(parseInt(userScores[s]) - parseInt(friends[f].scores[s]));
+
+                // If the total number of differences is less than the friendsNow differences, then set the bestMatch to the friends data.
+                if (totalDifference <= bestMatch.friendDelta) {
+                    bestMatch.name = friends[f].name;
+                    bestMatch.photo = friends[f].photo;
+                    bestMatch.friendDelta = totalDifference;
+                }
+            }
         }
-
-
+        // After the check, store and save user's data to the friends data
+        friends.push(userData);
+        
+        // The HTML file will use the JSON data below
+        res.json(bestMatch);
     });
-
-
-
-
-
-
-
-
-
 };
