@@ -172,24 +172,26 @@
         </footer>
     </div>
 
-    <div id="results-modal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title"><strong>Match Made in Heaven!</strong></h2>
-                    <button class="close float-right" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <h2 id="match-name"></h2>
-                    <img id="match-img" src="" alt="" width='100%'>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-default" data-dismiss="modal">Close</button>
+    <div class="modal" id="resultsModal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Match Made in Heaven!</h3>
+                        <button type="button" class="close" onclick="location.reload()" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        
+                    </div>
+                    <div class="modal-body">
+                        <h3 id="matchName"></h3>
+                        <img id="matchImg" src="http://via.placeholder.com/350x250" alt="">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="location.reload()" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
 </body>
 </html>
