@@ -17,10 +17,21 @@ module.exports = function(app) {
         let bestMatch = {
             name: "",
             photo: "",
-            friendDelta: 100
+            friendDelta: Infinity // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity
         };
 
-        
+        let userData = req.body;
+        let userScores = userData.scores;
+
+        // Calculates the difference between user's score and each friend's score in the data set
+        let totalDifference;
+
+        // For loop to run through each friend's data to.
+        for (let i = 0; i < friends.length; i++) {
+            
+        }
+
+
     });
 
 
