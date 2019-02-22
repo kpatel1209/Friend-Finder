@@ -12,8 +12,16 @@ module.exports = function(app) {
 
     // POST route to handle incoming survery results and compatibility logic
     app.post("/api/friends", function(req, res) {
+
+        // This object will store the best possible friend match and will update after each loop through
+        let bestMatch = {
+            name: "",
+            photo: "",
+            friendDelta: 100
+        };
+
         
-    })
+    });
 
 
 
